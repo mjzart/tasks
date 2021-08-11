@@ -22,7 +22,7 @@ const validateFields = (values:ITask) =>{
         errors.date = 'Please, enter date!'
     }
     tasksData.tasksData.forEach(task=>{
-        if (task.name === values.name){
+        if ((task.name === values.name) && (task.id !== values.id)){
             errors.name = 'This task already exists'
         }
     })

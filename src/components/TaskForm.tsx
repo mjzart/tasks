@@ -7,6 +7,8 @@ import validateFields, { IErrors } from "./validateFields";
 import ErrorMassege from "./ErrorMassege";
 
 
+
+
 const StyledDiv = styled.div`
 display:flex;
 justify-content: center;
@@ -154,12 +156,12 @@ const TaskForm: React.FC = observer( () =>{
             </StyledDiv>
             <StyledDiv>
                 <StyledInput 
-                    type="date" 
-                    name="date" 
-                    id="date" 
-                    value={task.date} 
+                    type='date'
+                    id='date'
+                    name='date'
+                    value={task.date}
                     onChange={handleChange}
-                    onFocus = {()=>{console.log('focus') }}  
+                      
                 />
             {errors.date && <ErrorMassege errorText={errors.date}/>}
             </StyledDiv>

@@ -14,6 +14,11 @@ const StyledInput = styled.input`
     border: 1px solid #ced4da;
     width:90%;
     height: 25px;
+    &::-webkit-calendar-picker-indicator {
+        opacity:0;
+        position: absolute;
+        width: 10%;
+      }
 `
 
 const StyledSelect = styled.select`
