@@ -14,6 +14,11 @@ const StyleHeader = styled.tr`
     background-color: #7ba3fb;
 
 `
+const StyledTdSort = styled.td`
+&:hover{
+    cursor: pointer;
+}
+`
 
 const StyledTable = styled.table`
 width:90%;
@@ -32,7 +37,7 @@ const Tasks: React.FC = observer( () =>{
         <thead>
             <StyleHeader>
                 <td>id </td>
-                <td onClick={()=>{tasksData.sortTask()}}>Name</td>
+                <StyledTdSort onClick={()=>{tasksData.sortTask()}}>Name{tasksData.sortAsc? <span>▼</span> :<span>▲</span>}</StyledTdSort>
                 <td>Type</td>
                 <td>Description</td>
                 <td>Date</td>
