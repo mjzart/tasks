@@ -1,4 +1,5 @@
-import { ITask } from "../store/tasksData";
+import tasksData, { ITask } from "../store/tasksData";
+
 
 export interface IErrors{
     name?:string;
@@ -20,6 +21,13 @@ const validateFields = (values:ITask) =>{
     if(!values.date){
         errors.date = 'Please, enter date!'
     }
+    tasksData.tasksData.forEach(task=>{
+        if (task.name === values.name){
+            errors.name = 'This task already exists'
+        }
+    })
+
+
     return errors;
 }
 

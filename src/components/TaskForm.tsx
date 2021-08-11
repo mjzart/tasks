@@ -22,6 +22,11 @@ const StyledInput = styled.input`
     border: 1px solid #ced4da;
     width:90%;
     height: 25px;
+    &::-webkit-calendar-picker-indicator {
+        opacity:0;
+        position: absolute;
+        width: 100%;
+      }
 `
 
 const StyledSelect = styled.select`
@@ -153,7 +158,8 @@ const TaskForm: React.FC = observer( () =>{
                     name="date" 
                     id="date" 
                     value={task.date} 
-                    onChange={handleChange}  
+                    onChange={handleChange}
+                    onFocus = {()=>{console.log('focus') }}  
                 />
             {errors.date && <ErrorMassege errorText={errors.date}/>}
             </StyledDiv>

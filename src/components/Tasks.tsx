@@ -32,7 +32,7 @@ const Tasks: React.FC = observer( () =>{
         <thead>
             <StyleHeader>
                 <td>id </td>
-                <td>Name</td>
+                <td onClick={()=>{tasksData.sortTask()}}>Name</td>
                 <td>Type</td>
                 <td>Description</td>
                 <td>Date</td>

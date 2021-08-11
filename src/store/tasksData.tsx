@@ -18,6 +18,7 @@ class TasksData {
         date: '2021-08-09', 
         modal: false,
     }]
+    sortAsc:boolean = false;
 
     constructor(){
         makeAutoObservable(this);
@@ -29,6 +30,19 @@ class TasksData {
 
     removeTask(id:number){
         this.tasksData = this.tasksData.filter(task => task.id !== id)
+    }
+
+    sortTask(){
+        this.sortAsc = !this.sortAsc
+        this.tasksData = this.tasksData.sort((a,b) => {
+            if(a.name.toLowerCase()<b.name.toLowerCase()){
+               return this.sortAsc ? -1 : 1
+            }
+            if(a.name.toLowerCase()>b.name.toLowerCase()){
+                return this.sortAsc ? 1 : -1;
+            }
+            return 0
+        })
     }
     
     showModal(id:number){
